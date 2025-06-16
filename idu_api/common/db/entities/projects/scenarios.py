@@ -46,8 +46,6 @@ scenarios_data = Table(
     ),
     Column("name", String(200), nullable=False),
     Column("is_based", Boolean, nullable=False),
-    Column("phase", ScenarioPhaseEnum, nullable=True),
-    Column("phase_percentage", Float(3), nullable=True),
     Column("properties", JSONB(astext_type=Text()), nullable=False, server_default=text("'{}'::jsonb")),
     Column("created_at", TIMESTAMP(timezone=True), server_default=func.now(), nullable=False),
     Column("updated_at", TIMESTAMP(timezone=True), server_default=func.now(), nullable=False),
@@ -61,8 +59,6 @@ Scenarios data:
 - functional_zone_type_id foreign key int
 - name str
 - is_based bool
-- phase enum
-- phase_percentage float
 - properties jsonb
 - created_at timestamp
 - updated_at timestamp
